@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Chaprafame - The ultimate social media marketing platform to grow your presence on Instagram, Facebook, and YouTube with affordable pricing and guaranteed results.">
+  <meta name="keywords" content="Chaprafame, social media marketing, Instagram Followers, Facebook Likes, YouTube Views, affordable SMM, social media growth, Chaprafame.online">
+  <meta name="author" content="Chaprafame Team">
+  <meta property="og:title" content="Chaprafame - Social Media Marketing Platform">
+  <meta property="og:description" content="Boost your social media presence with Chaprafame's reliable and affordable services. Choose from a variety of plans for Instagram, Facebook, and YouTube!">
+  <meta property="og:url" content="https://chaprafame.online">
+  <meta property="og:image" content="https://chaprafame.online/assets/preview.png">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:site_name" content="Chaprafame">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Chaprafame - Social Media Marketing Platform">
+  <meta name="twitter:description" content="Explore Chaprafame's guaranteed plans to grow your Instagram, Facebook, and YouTube presence at affordable rates.">
+  <meta name="twitter:image" content="https://chaprafame.online/assets/preview.png">
+  <title>Chaprafame - Social Media Marketing Platform</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <script>
+    const categoryServices = {
+      "Instagram Followers 🌏 [UPDATED]": { "Basic Plan": 299, "Premium Plan": 399, "VIP Plan": 499 },
+      "Facebook Page Likes 🌟 [Worldwide]": { "Basic Plan": 10, "Premium Plan": 20, "VIP Plan": 30 },
+      "Instagram Views | All Link 🌍": { "Basic Plan": 6, "Premium Plan": 12, "VIP Plan": 18 },
+      "Instagram Likes [Guaranteed] ✅": { "Basic Plan": 5, "Premium Plan": 10, "VIP Plan": 15 },
+      "Instagram Likes [No Guaranteed] 🚫": { "Basic Plan": 3, "Premium Plan": 6, "VIP Plan": 9 },
+      "Instagram INDIAN Likes Guaranteed 🇮🇳": { "Basic Plan": 10, "Premium Plan": 20, "VIP Plan": 30 },
+      "Instagram Power Likes + Old Accounts 🔥": { "Basic Plan": 18, "Premium Plan": 36, "VIP Plan": 54 },
+      "Instagram Indian Reel Likes [Guaranteed] 🎥": { "Basic Plan": 5, "Premium Plan": 10, "VIP Plan": 15 },
+      "Instagram Reel Views | ALL LINK 🎥🌍": { "Basic Plan": 7, "Premium Plan": 14, "VIP Plan": 21 },
+      "Instagram Reel + Post Likes [Guaranteed] ❤️": { "Basic Plan": 8, "Premium Plan": 16, "VIP Plan": 24 },
+      "Instagram INDIAN Reels Likes 🇮🇳🎥": { "Basic Plan": 13, "Premium Plan": 26, "VIP Plan": 39 },
+      "Facebook Video Views 👁️": { "Basic Plan": 5, "Premium Plan": 10, "VIP Plan": 15 },
+      "YouTube Video Views 👁️": { "Basic Plan": 12, "Premium Plan": 24, "VIP Plan": 36 }
+    };
+
+    function updateServices() {
+      const category = document.getElementById("category").value;
+      const serviceDropdown = document.getElementById("service");
+      serviceDropdown.innerHTML = `<option value="">Select a service</option>`;
+      if (categoryServices[category]) {
+        Object.entries(categoryServices[category]).forEach(([serviceName, price]) => {
+          const option = document.createElement("option");
+          option.value = price;
+          option.textContent = `${serviceName} - ₹${price} per 1000`;
+          serviceDropdown.appendChild(option);
+        });
+      }
+      calculateTotal();
+    }
+
+    function calculateTotal() {
+      const servicePrice = parseFloat(document.getElementById("service").value) || 0;
+      const quantity = parseInt(document.getElementById("quantity").value) || 0;
+      const chargeField = document.getElementById("charge");
+      if (servicePrice >= 0 && quantity > 0) {
+        const total = (servicePrice / 1000) * quantity;
+        chargeField.value = `₹${total.toFixed(2)} 💵`;
+      } else {
+        chargeField.value = "Calculated charge";
+      }
+    }
+
+    async function submitForm(event) {
+  event.preventDefault();
+
+  // Collect form data
+  const category = document.getElementById("category").value;
+  const service = document.getElementById("service").options[document.getElementById("service").selectedIndex].text;
+  const link = document.getElementById("link").value;
+  const quantity = document.getElementById("quantity").value;
+  const charge = document.getElementById("charge").value;
+
+  // Validation
+  if (!category || !service || !link || !quantity) {
+    alert("Please fill out all fields!");
+    return;
+  }
+
+  // WhatsApp Message
+  const message = `*New Order Details:*\n\n*Category:* ${category}\n*Service:* ${service}\n*Link:* ${link}\n*Quantity:* ${quantity}\n*Total Price:* ${charge}\n\nPlease proceed with the order.`;
+  const whatsappNumber = "+917547818081";
+  window.open(`https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`, "_blank");
+
+}
+  </script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+  <header>
+    <h1 class="verified-text">CHAPRAFAME.ONLINE</h1>
+  </header>
+
+  <nav>
+    <ul>
+      <li><a href="#home"><i class="fas fa-home"></i> Home</a></li>
+      <li><a href="#order"><i class="fas fa-box"></i> Order</a></li>
+      <li><a href="#pricing"><i class="fas fa-tags"></i> Pricing</a></li>
+      <li><a href="#contact"><i class="fas fa-phone"></i> Contact</a></li>
+    </ul>
+  </nav>
+
+  <div class="container">
+    <section id="home">
+      <h2>Welcome to Chaprafame</h2>
+      <p>Grow your social media presence with our affordable and guaranteed plans.</p>
+      <p>Most trusted platform in SMM world</p>
+      
+    </section>
+
+    <section id="order">
+      <h2>Place Your Order</h2>
+      <form onsubmit="submitForm(event)">
+        <div>
+          <label for="category">Category</label>
+          <select id="category" onchange="updateServices()">
+            <option value="">Select a category</option>
+            <option>Instagram Followers 🌏 [UPDATED]</option>
+            <option>Facebook Page Likes 🌟 [Worldwide]</option>
+            <option>Instagram Views | All Link 🌍</option>
+            <option>Instagram Likes [Guaranteed] ✅</option>
+            <option>Instagram Likes [No Guaranteed] 🚫</option>
+            <option>Instagram INDIAN Likes Guaranteed 🇮🇳</option>
+            <option>Instagram Power Likes + Old Accounts 🔥</option>
+            <option>Instagram Indian Reel Likes [Guaranteed] 🎥</option>
+            <option>Instagram Reel Views | ALL LINK 🎥🌍</option>
+            <option>Instagram Reel + Post Likes [Guaranteed] ❤️</option>
+            <option>Instagram INDIAN Reels Likes 🇮🇳🎥</option>
+            <option>Facebook Video Views 👁️</option>
+            <option>YouTube Video Views 👁️</option>
+          </select>
+        </div>
+
+        <div>
+          <label for="service">Service</label>
+          <select id="service" onchange="calculateTotal()">
+            <option value="">Select a service</option>
+          </select>
+        </div>
+
+        <div>
+          <label for="link">Link</label>
+          <input type="text" id="link" placeholder="Enter your social media link">
+        </div>
+
+        <div>
+          <label for="quantity">Quantity</label>
+          <input type="number" id="quantity" placeholder="Enter quantity" oninput="calculateTotal()">
+        </div>
+
+        <div>
+          <label for="charge">Charge</label>
+          <input type="text" id="charge" placeholder="Calculated charge" disabled>
+        </div>
+
+        <button type="submit">Submit Order</button>
+      </form>
+    </section>
+    
+        <section id="pricing">
+  <h2>Pricing Plans</h2>
+  
+  <div class="pricing-plan">
+    <h3>Instagram Followers 🌏 [UPDATED]</h3>
+    <p>Basic: ₹299 | Premium: ₹399 | VIP: ₹499</p>
+  </div>
+  
+  <div class="pricing-plan">
+    <h3>Facebook Page Likes 🌟 [Worldwide]</h3>
+    <p>Basic: ₹10 | Premium: ₹20 | VIP: ₹30</p>
+  </div>
+  
+  <div class="pricing-plan">
+    <h3>Instagram Views | All Link 🌍</h3>
+    <p>Basic: ₹6 | Premium: ₹12 | VIP: ₹18</p>
+  </div>
+  
+  <div class="pricing-plan">
+    <h3>Instagram Likes [Guaranteed] ✅</h3>
+    <p>Basic: ₹5 | Premium: ₹10 | VIP: ₹15</p>
+  </div>
+  
+  <div class="pricing-plan">
+    <h3>Instagram Likes [No Guaranteed]🚫</h3>
+    <p>Basic: ₹3 | Premium: ₹6 | VIP: ₹9</p>
+  </div>
+  
+  <div class="pricing-plan">
+    <h3>Instagram INDIAN Likes Guaranteed 🇮🇳</h3>
+    <p>Basic: ₹10 | Premium: ₹20 | VIP: ₹30</p>
+  </div>
+  
+  <div class="pricing-plan">
+    <h3>Instagram Power Likes + Old Accounts 🔥</h3>
+    <p>Basic: ₹18 | Premium: ₹36 | VIP: ₹54</p>
+  </div>
+  
+  <div class="pricing-plan">
+    <h3>Instagram Indian Reel Likes [Guaranteed] 🎥</h3>
+    <p>Basic: ₹5 | Premium: ₹10 | VIP: ₹15</p>
+  </div>
+  
+  <div class="pricing-plan">
+    <h3>Instagram Reel Views | ALL LINK 🎥🌍</h3>
+    <p>Basic: ₹7 | Premium: ₹14 | VIP: ₹21</p>
+  </div>
+  
+  <div class="pricing-plan">
+    <h3>Instagram Reel + Post Likes [Guaranteed] ❤️</h3>
+    <p>Basic: ₹8 | Premium: ₹16 | VIP: ₹24</p>
+  </div>
+  
+  <div class="pricing-plan">
+    <h3>Instagram INDIAN Reels Likes 🇮🇳🎥</h3>
+    <p>Basic: ₹13 | Premium: ₹26 | VIP: ₹39</p>
+  </div>
+  
+  <div class="pricing-plan">
+    <h3>Facebook Video Views 👁️</h3>
+    <p>Basic: ₹5 | Premium: ₹10 | VIP: ₹15</p>
+  </div>
+  
+  <div class="pricing-plan">
+    <h3>YouTube Video Views 👁️</h3>
+    <p>Basic: ₹12 | Premium: ₹24 | VIP: ₹36</p>
+  </div>
+</section>
+  
+        <section id="contact">
+      <h2>Contact Us</h2>
+      <p><a href="mailto:chaprafame@gmail.com">Support</a></p>
+      <a href="https://whatsapp.com/channel/0029VazrXj7BFLgOoeXxCH0s" class="button" target="_blank">Join for Exclusive Offers!</a>
+      <p>2025 Chapra Fame. All Rights Reserved.</p>
+      <nav>
+        <ul>
+          <li><a href="privacy.html">Privacy Policy</a></li>
+          <li><a href="terms.html">terms</a></li>
+        </ul>
+      </nav>
+    </section>
+  </div>
+</body>
+</html>

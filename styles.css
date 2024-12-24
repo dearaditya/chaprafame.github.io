@@ -1,0 +1,186 @@
+/* General Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Roboto', sans-serif;
+}
+
+/* Body */
+body {
+  background-color: #10171e;
+  color: #ffffff;
+  line-height: 1.6;
+}
+
+/* Header */
+header {
+  background-color: #15202b;
+  padding: 1rem;
+  text-align: center;
+  border-bottom: 1px solid #253341;
+}
+header h1 {
+  font-family: Roboto;
+  font-size: 1.6rem; /* Text size */
+  font-weight: 500;
+  color: #ffffff;
+  display: inline-flex;
+  align-items: center; /* Vertically center text with the badge */
+}
+
+header h1::before {
+  content: ""; /* Required for pseudo-element */
+  display: inline-block;
+  background: url('verified-badge.png') no-repeat center center;
+  background-size: contain; /* Adjust image size to fit element */
+  width: 1.4em; /* Slightly bigger than text size */
+  height: 1.4em; /* Keep proportions */
+  margin-right: 0.0rem; /* Increase spacing between image and text */
+  margin-bottom: 0.1rem; /* Optional: Slight vertical alignment tweak */
+}
+
+header p {
+  font-size: 1rem;
+  color: #8899a6;
+}
+/* Navigation Bar */
+nav ul {
+  display: flex;
+  justify-content: center;
+  list-style: none;
+  margin-top: 0.5rem;
+}
+
+nav ul li {
+  margin: 0 1rem;
+  position: relative;
+  cursor: pointer;
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+nav ul li a {
+  text-decoration: none;
+  color: #ffffff;
+  font-size: 0.9rem;
+  transition: color 0.3s ease;
+}
+
+nav ul li a:hover {
+  color: #1da1f2;
+}
+
+
+/* Container */
+.container {
+  padding: 1rem 1.5rem;
+}
+
+/* Sections */
+section {
+  margin: 2rem 0;
+}
+
+h2 {
+  border-bottom: 2px solid #1da1f2;
+  padding-bottom: 0.5rem;
+  margin-bottom: 1rem;
+  font-size: 1.5rem;
+}
+
+p {
+  color: #8899a6;
+  margin-bottom: 1rem;
+}
+
+/* Forms */
+form {
+  background-color: #15202b;
+  padding: 1rem;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+}
+
+form div {
+  margin-bottom: 1rem;
+}
+
+label {
+  display: block;
+  margin-bottom: 0.3rem;
+  font-size: 0.9rem;
+  color: #ffffff;
+}
+
+input, select {
+  width: 100%;
+  padding: 0.5rem;
+  font-size: 1rem;
+  border: none;
+  border-radius: 5px;
+  background-color: #192734;
+  color: #ffffff;
+}
+
+input::placeholder {
+  color: #8899a6;
+}
+
+button {
+  background-color: #1da1f2;
+  color: #ffffff;
+  border: none;
+  padding: 0.7rem 1rem;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #1991db;
+}
+
+/* Pricing Plans */
+.pricing-plan {
+  background-color: #192734;
+  padding: 1rem;
+  margin: 0.5rem 0;
+  border-radius: 8px;
+  border: 1px solid #253341;
+}
+
+.pricing-plan h3 {
+  color: #1da1f2;
+  margin-bottom: 0.5rem;
+}
+
+/* Links */
+a.button {
+  display: inline-block;
+  background-color: #1da1f2;
+  color: #ffffff;
+  padding: 0.7rem 1rem;
+  border-radius: 5px;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+}
+
+a.button:hover {
+  background-color: #1991db;
+}
+
+/* Footer */
+section#contact {
+  text-align: center;
+  padding: 1rem 0;
+  border-top: 1px solid #253341;
+}
+
+section#contact nav ul {
+  justify-content: center;
+}
+
+section#contact p {
+  font-size: 0.9rem;
+}

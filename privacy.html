@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Privacy Policy - Chaprafame</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    /* General Reset */
+    body, h1, h2, h3, p, a {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    /* Body Styling */
+    body {
+      font-family: 'Roboto', sans-serif;
+      margin: 0;
+      padding: 0;
+      background: linear-gradient(to right, #f7f8fa, #ffffff);
+      color: #333;
+    }
+
+    header {
+  position: fixed; /* Locks the header at the top */
+  top: 0; /* Aligns the header with the top of the viewport */
+  left: 0; /* Aligns the header with the left edge */
+  width: 100%; /* Ensures the header spans the full width of the page */
+  background: black; /* Sets the background color */
+  color: white; /* Text color */
+  text-align: center; /* Centers the text */
+  padding: 20px 0; /* Adds vertical padding */
+  z-index: 1000; /* Keeps the header above other elements */
+}
+
+/* Body adjustment to prevent overlap */
+body {
+  margin: 0;
+  padding-top: 80px; /* Adjust padding to match header height */
+  font-family: Arial, sans-serif;
+}
+
+    header h1 {
+      font-size: 2rem;
+    }
+
+    /* Content Styling */
+    .content {
+      max-width: 800px;
+      margin: 40px auto;
+      padding: 20px;
+      background: white;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      opacity: 0;
+      transform: translateY(20px);
+      animation: fadeIn 1s ease-in-out forwards;
+    }
+
+    /* Animation */
+    @keyframes fadeIn {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    /* Links Styling */
+    a {
+      color: re;
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Privacy Policy</h1>
+  </header>
+  <div class="content">
+    <h2>Your Privacy Matters</h2>
+    <p>At <b>Chaprafame</b>, we are committed to protecting your personal information. This Privacy Policy outlines the types of information we collect, how we use it, and the measures we take to keep it safe.</p>
+    
+    <h3>Information We Collect</h3>
+    <p>We collect your contact details (e.g., email, phone number) and social media account information only when you place an order or interact with our services.</p>
+
+    <h3>How We Use Your Information</h3>
+    <p>The information we collect is used to process orders, improve our services, and send important updates or promotional offers tailored to your interests.</p>
+
+    <h3>Data Protection</h3>
+    <p>Your data is encrypted and stored securely. We do not share your information with third parties without your explicit consent.</p>
+
+    <h3>Contact Us</h3>
+    <p>If you have any questions about our Privacy Policy or how your information is used, please contact us at <a href="mailto:chaprafame@gmail.com">chaprafame@gmail.com</a>.</p>
+    
+    <a href="index.html">Go Back to Home</a>
+  </div>
+</body>
+</html>
